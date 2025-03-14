@@ -1,6 +1,7 @@
 # Lab Assignments TDT4186
 
-## Lab 1 Processes & Schedulings (syscalls)
+## Lab 1 Processes & Schedulings
+Syscalls
   - Task 1: Hello World
   - Task 2: Process Management
 
