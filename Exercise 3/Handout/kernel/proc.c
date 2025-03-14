@@ -380,34 +380,32 @@ int fork(void)
     struct proc *p = myproc();
 
     // Allocate process.
-    if ((np = allocproc()) == 0)
-    {
+    if ((np = allocproc()) == 0) {
         return -1;
     }
 
-    // Copy user memory from parent to child.
-    if (uvmcopy(p->pagetable, np->pagetable, p->sz) < 0)
-    {
+    // Copy user memory from parent to child (COW version)
+    if (uvmcopy(p->pagetable, np->pagetable, p->sz) < 0) {
         freeproc(np);
         release(&np->lock);
         return -1;
     }
     np->sz = p->sz;
 
-    // copy saved user registers.
+    // Copy saved user registers.
     *(np->trapframe) = *(p->trapframe);
-
+    
     // Cause fork to return 0 in the child.
     np->trapframe->a0 = 0;
 
-    // increment reference counts on open file descriptors.
-    for (i = 0; i < NOFILE; i++)
+    // Increment reference counts on open file descriptors.
+    for (i = 0; i < NOFILE; i++) {
         if (p->ofile[i])
             np->ofile[i] = filedup(p->ofile[i]);
+    }
     np->cwd = idup(p->cwd);
 
     safestrcpy(np->name, p->name, sizeof(p->name));
-
     pid = np->pid;
 
     release(&np->lock);
@@ -422,6 +420,7 @@ int fork(void)
 
     return pid;
 }
+
 
 // Pass p's abandoned children to init.
 // Caller must hold wait_lock.
@@ -448,6 +447,15 @@ void exit(int status)
 
     if (p == initproc)
         panic("init exiting");
+
+    // Unmap all pages and decrement reference counts
+    uvmunmap(p->pagetable, 0, p->sz / PGSIZE, 1);
+    
+    // Wake up the parent if it was suspended by vfork
+    if(p->parent && p->parent->state == SLEEPING){
+        p->parent->state = RUNNABLE;
+    }
+
 
     // Close all open files.
     for (int fd = 0; fd < NOFILE; fd++)

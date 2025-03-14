@@ -26,11 +26,15 @@ struct
 {
     struct spinlock lock;
     struct run *freelist;
+    int reference_count[PHYSTOP / PGSIZE]; // Reference count for each physical page
 } kmem;
 
 void kinit()
 {
     initlock(&kmem.lock, "kmem");
+    for (int i = 0; i < PHYSTOP / PGSIZE; i++) {
+        kmem.reference_count[i] = 0; // Initialize reference counts to 0
+    }
     freerange(end, (void *)PHYSTOP);
     MAX_PAGES = FREE_PAGES;
 }
@@ -58,15 +62,21 @@ void kfree(void *pa)
     if (((uint64)pa % PGSIZE) != 0 || (char *)pa < end || (uint64)pa >= PHYSTOP)
         panic("kfree");
 
-    // Fill with junk to catch dangling refs.
-    memset(pa, 1, PGSIZE);
-
-    r = (struct run *)pa;
-
+    // Decrement reference count and only free the page if the count reaches 0
     acquire(&kmem.lock);
-    r->next = kmem.freelist;
-    kmem.freelist = r;
-    FREE_PAGES++;
+    int page_index = (uint64)pa / PGSIZE;
+    if (kmem.reference_count[page_index] > 0) {
+        kmem.reference_count[page_index]--;
+    }
+    if (kmem.reference_count[page_index] == 0) {
+        // Fill with junk to catch dangling refs.
+        memset(pa, 1, PGSIZE);
+
+        r = (struct run *)pa;
+        r->next = kmem.freelist;
+        kmem.freelist = r;
+        FREE_PAGES++;
+    }
     release(&kmem.lock);
 }
 
@@ -81,12 +91,48 @@ kalloc(void)
 
     acquire(&kmem.lock);
     r = kmem.freelist;
-    if (r)
+    if (r) {
         kmem.freelist = r->next;
+        int page_index = (uint64)r / PGSIZE;
+        kmem.reference_count[page_index] = 1; // Initialize reference count to 1
+    }
     release(&kmem.lock);
 
     if (r)
         memset((char *)r, 5, PGSIZE); // fill with junk
     FREE_PAGES--;
     return (void *)r;
+}
+
+// Increment reference count for a physical page
+void
+incref(void *pa) {
+    if (((uint64)pa % PGSIZE) != 0 || (char *)pa < end || (uint64)pa >= PHYSTOP)
+        panic("incref: invalid physical address");
+
+    acquire(&kmem.lock);
+    int page_index = (uint64)pa / PGSIZE;
+    kmem.reference_count[page_index]++;
+    release(&kmem.lock);
+}
+
+// Decrement reference count for a physical page
+void
+decref(void *pa) {
+    if (((uint64)pa % PGSIZE) != 0 || (char *)pa < end || (uint64)pa >= PHYSTOP)
+        panic("decref: invalid physical address");
+
+    acquire(&kmem.lock);
+    int page_index = (uint64)pa / PGSIZE;
+    if (kmem.reference_count[page_index] > 0) {
+        kmem.reference_count[page_index]--;
+    }
+    if (kmem.reference_count[page_index] == 0) {
+        // Free the page if the reference count reaches 0
+        struct run *r = (struct run *)pa;
+        r->next = kmem.freelist;
+        kmem.freelist = r;
+        FREE_PAGES++;
+    }
+    release(&kmem.lock);
 }

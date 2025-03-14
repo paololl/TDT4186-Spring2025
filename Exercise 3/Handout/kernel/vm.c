@@ -177,15 +177,16 @@ uvmunmap(pagetable_t pagetable, uint64 va, uint64 npages, int do_free)
     panic("uvmunmap: not aligned");
 
   for(a = va; a < va + npages*PGSIZE; a += PGSIZE){
+
     if((pte = walk(pagetable, a, 0)) == 0)
-      panic("uvmunmap: walk");
+      continue;
     if((*pte & PTE_V) == 0)
-      panic("uvmunmap: not mapped");
+      continue;
     if(PTE_FLAGS(*pte) == PTE_V)
       panic("uvmunmap: not a leaf");
     if(do_free){
       uint64 pa = PTE2PA(*pte);
-      kfree((void*)pa);
+      decref((void*)pa); // decrement ref count
     }
     *pte = 0;
   }
@@ -302,35 +303,41 @@ uvmfree(pagetable_t pagetable, uint64 sz)
 // physical memory.
 // returns 0 on success, -1 on failure.
 // frees any allocated pages on failure.
-int
-uvmcopy(pagetable_t old, pagetable_t new, uint64 sz)
+int uvmcopy(pagetable_t old, pagetable_t new, uint64 sz)
 {
   pte_t *pte;
   uint64 pa, i;
   uint flags;
-  char *mem;
+  uint newflags; // flags for the new page table.
 
   for(i = 0; i < sz; i += PGSIZE){
-    if((pte = walk(old, i, 0)) == 0)
-      panic("uvmcopy: pte should exist");
-    if((*pte & PTE_V) == 0)
-      panic("uvmcopy: page not present");
-    pa = PTE2PA(*pte);
-    flags = PTE_FLAGS(*pte);
-    if((mem = kalloc()) == 0)
-      goto err;
-    memmove(mem, (char*)pa, PGSIZE);
-    if(mappages(new, i, PGSIZE, (uint64)mem, flags) != 0){
-      kfree(mem);
-      goto err;
-    }
+      if((pte = walk(old, i, 0)) == 0)
+          panic("uvmcopy: pte should exist");
+      if((*pte & PTE_V) == 0)
+          panic("uvmcopy: page not present");
+      pa = PTE2PA(*pte);
+      flags = PTE_FLAGS(*pte);
+      
+      // Mark parent's page as read-only and set COW.
+      *pte &= ~PTE_W;
+      *pte |= PTE_COW;
+      
+      // For the child's mapping, also clear write bit and add COW.
+      newflags = (flags & ~PTE_W) | PTE_COW;
+      if(mappages(new, i, PGSIZE, pa, newflags) != 0){
+          goto err;
+      }
+      
+      incref((void *)pa); // increment ref count
   }
   return 0;
 
- err:
-  uvmunmap(new, 0, i / PGSIZE, 1);
+  err:
+  if(i > 0)
+      uvmunmap(new, 0, i / PGSIZE, 1);
   return -1;
 }
+
 
 // mark a PTE invalid for user access.
 // used by exec for the user stack guard page.

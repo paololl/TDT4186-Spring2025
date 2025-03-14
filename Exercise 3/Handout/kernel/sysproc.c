@@ -5,6 +5,8 @@
 #include "memlayout.h"
 #include "spinlock.h"
 #include "proc.h"
+#include "defs.h"
+
 
 extern uint64 FREE_PAGES; // kalloc.c keeps track of those
 
@@ -117,10 +119,39 @@ uint64 sys_schedset(void)
     return 0;
 }
 
-uint64 sys_va2pa(void)
-{
-    printf("TODO: IMPLEMENT ME [%s@%s (line %d)]", __func__, __FILE__, __LINE__);
-    return 0;
+uint64 sys_va2pa(void) {
+    uint64 va;
+    int pid;
+    
+    // Retrieve the arguments (these functions return void in your version)
+    argaddr(0, &va);
+    argint(1, &pid);
+
+    struct proc *p = 0;
+
+    // If pid is 0, use the current process.
+    if (pid == 0) {
+        p = myproc();
+    } else {
+        // Iterate through the global process table 'proc'
+        for (int i = 0; i < NPROC; i++) {
+            if (proc[i].pid == pid) {
+                p = &proc[i];
+                break;
+            }
+        }
+    }
+
+    if (p == 0)
+        return 0;
+
+    // Walk the page table to find the mapping for the virtual address.
+    pte_t *pte = walk(p->pagetable, va, 0);
+    if (pte == 0 || ((*pte) & PTE_V) == 0)
+        return 0;
+
+    uint64 pa = PTE2PA(*pte);
+    return pa;
 }
 
 uint64 sys_pfreepages(void)

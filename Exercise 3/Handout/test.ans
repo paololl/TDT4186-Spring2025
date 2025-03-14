@@ -1,0 +1,160 @@
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:12: SyntaxWarning: invalid escape sequence '\:'
+  r.match("Usage\: vatopa virtual_address \[pid\]")
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:48: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v1 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:49: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v4 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:53: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v3 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:54: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v2 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:65: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v1 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:66: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v5 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:70: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v2 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:71: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v3 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:75: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v4 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:76: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v3 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:80: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] read global_var, global_var=0$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:90: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v1 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:91: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v6 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:95: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v2 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:96: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v3 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:100: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v3 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:101: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v4 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:105: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v4 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:106: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v5 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:110: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] modified global_var, global_var=100$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:113: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] read global_var, global_var=0$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:123: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v1 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:124: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v7 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:128: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v2 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:129: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v3 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:133: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] global_array\[0\] --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:134: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] global_array\[0\] --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:140: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] pa1 --> 0x([0-9a-fA-F]+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:141: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] pa2 --> 0x([0-9a-fA-F]+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:142: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] pa3 --> 0x([0-9a-fA-F]+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:149: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v3 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:150: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v4 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:154: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] v3 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:155: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v5 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:159: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v5 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:160: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] v6 --> (\d+)$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:164: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] modified one element in the 1st page, global_array\[0\]=222$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:167: SyntaxWarning: invalid escape sequence '\['
+  "^\[chld\] modified two elements in the 2nd page, global_array\[2047\]=333$",
+/home/plafe/TDT4186/Exercise 3/Handout/./test-lab-l3:170: SyntaxWarning: invalid escape sequence '\['
+  "^\[prnt\] modified one element in the 1st page, global_array\[0\]=111$",
+make[1]: Entering directory '/home/plafe/TDT4186/Exercise 3/Handout'
+riscv64-linux-gnu-gcc    -c -o kernel/entry.o kernel/entry.S
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/start.o kernel/start.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/console.o kernel/console.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/printf.o kernel/printf.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/uart.o kernel/uart.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/kalloc.o kernel/kalloc.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/spinlock.o kernel/spinlock.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/string.o kernel/string.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/main.o kernel/main.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/vm.o kernel/vm.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/proc.o kernel/proc.c
+riscv64-linux-gnu-gcc    -c -o kernel/swtch.o kernel/swtch.S
+riscv64-linux-gnu-gcc    -c -o kernel/trampoline.o kernel/trampoline.S
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/trap.o kernel/trap.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/syscall.o kernel/syscall.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/sysproc.o kernel/sysproc.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/bio.o kernel/bio.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/fs.o kernel/fs.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/log.o kernel/log.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/sleeplock.o kernel/sleeplock.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/file.o kernel/file.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/pipe.o kernel/pipe.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/exec.o kernel/exec.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/sysfile.o kernel/sysfile.c
+riscv64-linux-gnu-gcc    -c -o kernel/kernelvec.o kernel/kernelvec.S
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/plic.o kernel/plic.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/virtio_disk.o kernel/virtio_disk.c
+riscv64-linux-gnu-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -gdwarf-2 -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie -march=rv64g -nostdinc -I. -Ikernel -c user/initcode.S -o user/initcode.o
+riscv64-linux-gnu-ld -z max-page-size=4096 -N -e start -Ttext 0 -o user/initcode.out user/initcode.o
+riscv64-linux-gnu-ld: warning: user/initcode.out has a LOAD segment with RWX permissions
+riscv64-linux-gnu-objcopy -S -O binary user/initcode.out user/initcode
+riscv64-linux-gnu-objdump -S user/initcode.o > user/initcode.asm
+riscv64-linux-gnu-ld -z max-page-size=4096 -T kernel/kernel.ld -o kernel/kernel kernel/entry.o kernel/start.o kernel/console.o kernel/printf.o kernel/uart.o kernel/kalloc.o kernel/spinlock.o kernel/string.o kernel/main.o kernel/vm.o kernel/proc.o kernel/swtch.o kernel/trampoline.o kernel/trap.o kernel/syscall.o kernel/sysproc.o kernel/bio.o kernel/fs.o kernel/log.o kernel/sleeplock.o kernel/file.o kernel/pipe.o kernel/exec.o kernel/sysfile.o kernel/kernelvec.o kernel/plic.o kernel/virtio_disk.o 
+riscv64-linux-gnu-ld: warning: kernel/kernel has a LOAD segment with RWX permissions
+riscv64-linux-gnu-objdump -S kernel/kernel > kernel/kernel.asm
+riscv64-linux-gnu-objdump -t kernel/kernel | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > kernel/kernel.sym
+make[1]: Leaving directory '/home/plafe/TDT4186/Exercise 3/Handout'
+== Test [MANDATORY] vatopa exists == 
+$ make qemu-gdb
+[MANDATORY] vatopa exists: [32mOK[0m (6.3s) 
+== Test [MANDATORY] vatopa 0 == 
+$ make qemu-gdb
+[MANDATORY] vatopa 0: [32mOK[0m (1.4s) 
+== Test [MANDATORY] vatopa 0 1 matches == 
+$ make qemu-gdb
+[32m			Matching OK[0m
+[MANDATORY] vatopa 0 1 matches: [32mOK[0m (1.4s) 
+== Test [MANDATORY] cowtest no crash == 
+$ make qemu-gdb
+[MANDATORY] cowtest no crash: [32mOK[0m (8.1s) 
+== Test [MANDATORY] cowtest 1 match addresses == 
+$ make qemu-gdb
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[MANDATORY] cowtest 1 match addresses: [32mOK[0m (6.8s) 
+== Test [MANDATORY] cowtest 2 match addresses == 
+$ make qemu-gdb
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[MANDATORY] cowtest 2 match addresses: [32mOK[0m (6.9s) 
+== Test [MANDATORY] cowtest 3 match addresses == 
+$ make qemu-gdb
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[MANDATORY] cowtest 3 match addresses: [32mOK[0m (8.0s) 
+== Test [MANDATORY] cowtest 4 match addresses == 
+$ make qemu-gdb
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[32m			Matching OK[0m
+[MANDATORY] cowtest 4 match addresses: [32mOK[0m (7.0s) 
+Passed 8 out of 8 tests
